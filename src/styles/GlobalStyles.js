@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
-import '@fontsource/beth-ellen';
-import '@fontsource/caveat';
 import '@fontsource/bellota';
+import '@fontsource/beth-ellen';
+import '@fontsource/marck-script';
 
 const GlobalStyles = createGlobalStyle`
 

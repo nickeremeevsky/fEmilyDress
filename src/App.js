@@ -1,5 +1,7 @@
-import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
+import GlobalFonts from './assets/fonts/fonts';
+
+import { ThemeProvider } from 'styled-components';
 import { dark } from './styles/Themes';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import { useRef } from 'react';
@@ -7,6 +9,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import Home from './sections/Home';
+import About from './sections/About';
 
 function App() {
   const containerRef = useRef(null);
@@ -14,6 +17,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <GlobalFonts />
       <ThemeProvider theme={dark}>
         <LocomotiveScrollProvider
           options={{
@@ -32,6 +36,7 @@ function App() {
           <AnimatePresence>
             <main data-scroll-container ref={containerRef}>
               <Home />
+              <About />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
