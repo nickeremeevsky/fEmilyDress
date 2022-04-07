@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body{
-  font-family: 'Sirin Stencil';
+  font-family: 'Bellota', cursive;
   overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,h6{
