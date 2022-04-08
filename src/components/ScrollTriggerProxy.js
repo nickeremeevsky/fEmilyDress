@@ -6,7 +6,7 @@ import { useLocomotiveScroll } from 'react-locomotive-scroll';
 const ScrollTriggerProxy = () => {
   const { scroll } = useLocomotiveScroll();
 
-  gsap.registerPlugin(ScrollTriggerProxy);
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     if (scroll) {

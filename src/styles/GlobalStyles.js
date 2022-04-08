@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 import '@fontsource/bellota';
 import '@fontsource/beth-ellen';
-import '@fontsource/marck-script';
 
 const GlobalStyles = createGlobalStyle`
 

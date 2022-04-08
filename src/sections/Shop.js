@@ -72,12 +72,11 @@ const Right = styled.div`
 
   h1 {
     width: 5rem;
-    margin: 0 1rem;
+    margin: 0 2rem;
   }
 `;
 
 const Item = styled(motion.div)`
-  display: inline-block;
   width: 20rem;
   margin-right: 6rem;
 
@@ -176,12 +175,12 @@ const Shop = () => {
         </p>
       </Left>
       <Right ref={horizontalRef}>
-        <Product img={img4} title="Теплые трикотажные платья" />
+        <Product img={img4} title="Трикотажные платья" />
         <Product img={img5} title="Повседневные платья" />
         <Product img={img6} title="Коктейльные платья" />
         <Product img={img7} title="Вечерние платья" />
         <Product img={img8} title="Джинсовые платья" />
-        <Product img={img9} title="Сарафаны и летние платья" />
+        <Product img={img9} title="Сарафаны" />
       </Right>
     </Section>
   );

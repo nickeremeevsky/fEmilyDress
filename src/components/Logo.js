@@ -85,10 +85,10 @@ const Logo = () => {
             x="0px"
             y="0px"
             viewBox="0 0 1197.125 1640.452"
-            enable-background="new 0 0 1197.125 1640.452"
+            enableBackground="new 0 0 1197.125 1640.452"
             fill="none"
             stroke="white"
-            stroke-width="2%"
+            strokeWidth="2%"
           >
             <g>
               <motion.path
