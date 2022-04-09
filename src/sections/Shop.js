@@ -26,8 +26,8 @@ const Section = styled.section`
 `;
 
 const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontxxxl};
-  font-family: 'Very Bery';
+  font-size: ${(props) => props.theme.fontxxl};
+  font-family: 'Very Berry';
   color: ${(props) => props.theme.text};
   text-shadow: 1px 1px 1px ${(props) => props.theme.body};
 
@@ -135,7 +135,6 @@ const Shop = () => {
           scroller: '.App',
           scrub: true,
           pin: true,
-          merkers: true,
         },
         height: `${scrollingElement.scrollWidth}px`,
         ease: 'none',
@@ -148,7 +147,6 @@ const Shop = () => {
           end: pinWrapWidth,
           scroller: '.App',
           scrub: true,
-          merkers: true,
         },
         x: -pinWrapWidth,
         ease: 'none',
@@ -156,7 +154,10 @@ const Shop = () => {
 
       ScrollTrigger.refresh();
     }, 1000);
-    return () => {};
+    return () => {
+      t1.kill();
+      ScrollTrigger.kill();
+    };
   }, []);
 
   return (

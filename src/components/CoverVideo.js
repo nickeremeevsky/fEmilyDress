@@ -193,6 +193,16 @@ const CoverVideo = () => {
         >
           Твоё платье уМИЛИтельно, дорогая!
         </motion.h2>
+        <br />
+        <br />
+        <motion.h2
+          variants={item}
+          data-scroll
+          data-scroll-delay="0.11"
+          data-scroll-speed="1"
+        >
+          *femily dress (eng.) - женское платье
+        </motion.h2>
       </Title>
       <video src={MainVideo} type="video/mp4" autoPlay muted loop />
     </VideoContainer>

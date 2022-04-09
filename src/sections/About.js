@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 import img1 from '../assets/Images/1.jpg';
 import img2 from '../assets/Images/2.jpg';
@@ -15,9 +14,9 @@ const Section = styled.section`
   margin: 0 auto;
 `;
 
-const Title = styled(motion.h1)`
-  font-size: ${(props) => props.theme.fontBig};
-  font-family: 'Very Bery';
+const Title = styled.h1`
+  font-size: ${(props) => props.theme.fontxxxl};
+  font-family: 'Very Berry';
 
   position: absolute;
   top: 1rem;
@@ -25,7 +24,7 @@ const Title = styled(motion.h1)`
   z-index: 5;
 `;
 
-const Left = styled(motion.div)`
+const Left = styled.div`
   width: 50%;
   font-size: ${(props) => props.theme.fontmd};
   font-weight: 300;
@@ -34,7 +33,7 @@ const Left = styled(motion.div)`
   margin-top: 20%;
 `;
 
-const Right = styled(motion.div)`
+const Right = styled.div`
   width: 50%;
   position: relative;
 
@@ -77,8 +76,8 @@ const About = () => {
         Как производитель христианской одежды, мы берем на себя большую
         ответственность перед нашими покупателями. Поэтому особенное внимание
         «fEmily dress» уделяет качеству исполнения. Над созданием длинных
-        платьев и юбок, сарафанов и блузок работает группа опытных
-        профессионалов, влюбленных в свое дело.
+        платьев и сарафанов работает группа опытных профессионалов, влюбленных в
+        свое дело.
         <br />
         <br />
         Нам очень важно, чтобы женщины - христианки, среди которых много мам, в

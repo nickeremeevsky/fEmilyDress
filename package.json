@@ -5,6 +5,8 @@
   "dependencies": {
     "@fontsource/bellota": "^4.5.7",
     "@fontsource/beth-ellen": "^4.5.5",
+    "@fontsource/lobster": "^4.5.5",
+    "@fontsource/pacifico": "^4.5.5",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",

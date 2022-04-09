@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import '@fontsource/bellota';
 import '@fontsource/beth-ellen';
+import '@fontsource/lobster';
 
 const GlobalStyles = createGlobalStyle`
 

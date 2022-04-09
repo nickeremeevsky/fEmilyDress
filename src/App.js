@@ -1,18 +1,20 @@
 import GlobalStyles from './styles/GlobalStyles';
 import GlobalFonts from './assets/fonts/fonts';
 
+import ScrollTriggerProxy from './components/ScrollTriggerProxy';
+import 'locomotive-scroll/dist/locomotive-scroll.css';
+
 import { ThemeProvider } from 'styled-components';
 import { dark } from './styles/Themes';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import { useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
-import 'locomotive-scroll/dist/locomotive-scroll.css';
 import Home from './sections/Home';
 import About from './sections/About';
 import Shop from './sections/Shop';
-// import Brand from './sections/Brand';
-import ScrollTriggerProxy from './components/ScrollTriggerProxy';
+import Banner from './sections/Banner';
+import NewArrival from './sections/NewArrival';
 
 function App() {
   const containerRef = useRef(null);
@@ -43,7 +45,8 @@ function App() {
               <Home />
               <About />
               <Shop />
-              {/* <Brand /> */}
+              <Banner />
+              <NewArrival />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
