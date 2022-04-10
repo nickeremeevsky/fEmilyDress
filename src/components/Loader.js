@@ -1,25 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   position: absolute;
-  top: 1.7rem;
-  left: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-  width: 100%;
+  touch-action: none;
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 7;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
 
-  z-index: 5;
-
-  a {
-    display: flex;
-    align-items: flex-end;
-  }
-
   svg {
-    width: 3rem;
+    width: 10vw;
     height: auto;
     overflow: visible;
     stroke-linejoin: round;
@@ -31,27 +38,31 @@ const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 48em) {
+    svg {
+      width: 20vw;
+    }
+  }
 `;
 
 const Text = styled(motion.span)`
   font-family: 'Beth Ellen', cursive;
-  font-size: ${(props) => props.theme.fontlg};
+  font-size: ${(props) => props.theme.fontxl};
   color: ${(props) => props.theme.text};
-  padding-bottom: 1.5rem;
+  padding-top: 0.5rem;
 `;
 
 const textVariants = {
   hidden: {
     opacity: 0,
-    x: -50,
   },
   visible: {
     opacity: 1,
-    x: -5,
 
     transition: {
-      duration: 5, // 2
-      delay: 2,
+      duration: 1,
+      yoyo: Infinity,
       ease: 'easeInOut',
     },
   },
@@ -68,35 +79,45 @@ const pathVariants = {
 
     transition: {
       duration: 2,
-      delay: 3,
       ease: 'easeInOut',
     },
   },
 };
 
-const Logo = () => {
+const Loader = () => {
   return (
     <div>
-      <Container>
-        <Link to="/">
-          <svg
-            version="1.1"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            viewBox="0 0 1197.125 1640.452"
-            enableBackground="new 0 0 1197.125 1640.452"
-            fill="none"
-            stroke="white"
-            strokeWidth="2%"
-          >
-            <g>
-              <motion.path
-                variants={pathVariants}
-                initial="hidden"
-                animate="visible"
-                d="M586.544,92.279c-31.787-11.41-54.318-11.016-54.782-17.829c-0.617-9.058,30.791-11.347,60.017-3.754
+      <Container
+        initial={{
+          y: '0',
+          opacity: 1,
+        }}
+        exit={{
+          y: '100%',
+          opacity: 0,
+        }}
+        transition={{
+          duration: 2,
+        }}
+      >
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          viewBox="0 0 1197.125 1640.452"
+          enableBackground="new 0 0 1197.125 1640.452"
+          fill="none"
+          stroke="white"
+          strokeWidth="2%"
+        >
+          <g>
+            <motion.path
+              variants={pathVariants}
+              initial="hidden"
+              animate="visible"
+              d="M586.544,92.279c-31.787-11.41-54.318-11.016-54.782-17.829c-0.617-9.058,30.791-11.347,60.017-3.754
 		c12.62,3.279,12.5-56.336,57.186-50.012c17.296,2.448,36.952,9.174,50.769,19.625c24.121,18.244,1.79,61.139,9.507,64.85
 		c21.238,10.213,59.87,32.584,46.232,51.858c-7.328,10.356-32.88-1.507-44.271-6.521c-0.466,2.721,0.907,4.56,1.823,6.531
 		c9.12,19.622,12.705,17.941,11.713,23.951c-1.179,7.136,0.991,5.724,0.971,12.259c-0.026,8.742,4.362,9.284-0.42,14.128
@@ -125,16 +146,15 @@ const Logo = () => {
 		c1.103,0.263-0.406,2.197,16.616-29.03C613.755,435.442,607.588,420.745,600.18,412.018z M719.892,220.53
 		c8.212,12.704,13.27,9.216,11.683,7.244C728.719,224.228,725.958,220.484,719.892,220.53z M725.213,202.331
 		c-2.734-4.483-8.702,7.935-4.492,6.325C721.882,208.212,725.189,203.691,725.213,202.331z"
-              />
-            </g>
-          </svg>
-          <Text variants={textVariants} initial="hidden" animate="visible">
-            fEmily dress
-          </Text>
-        </Link>
+            />
+          </g>
+        </svg>
+        <Text variants={textVariants} initial="hidden" animate="visible">
+          fEmily dress
+        </Text>
       </Container>
     </div>
   );
 };
 
-export default Logo;
+export default Loader;

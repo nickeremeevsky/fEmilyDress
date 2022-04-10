@@ -35,6 +35,10 @@ const Title = styled.h1`
   top: 1rem;
   left: 5%;
   z-index: 10;
+
+  @media (max-width: 64em) {
+    font-size: ${(props) => props.theme.fontxl};
+  }
 `;
 
 const Left = styled.div`
@@ -56,6 +60,37 @@ const Left = styled.div`
     font-weight: 300;
     width: 80%;
     margin: 0 auto;
+  }
+
+  span {
+    font-family: 'Beth Ellen', cursive;
+    font-size: ${(props) => props.theme.fontxl};
+  }
+
+  @media (max-width: 64em) {
+    p {
+      font-size: ${(props) => props.theme.fontmd};
+    }
+    span {
+      font-size: ${(props) => props.theme.fontlg};
+    }
+  }
+  @media (max-width: 48em) {
+    width: 50%;
+    p {
+      font-size: ${(props) => props.theme.fontsm};
+    }
+    span {
+      font-size: ${(props) => props.theme.fontmd};
+    }
+  }
+  @media (max-width: 30em) {
+    p {
+      font-size: ${(props) => props.theme.fontxs};
+    }
+    span {
+      font-size: ${(props) => props.theme.fontsm};
+    }
   }
 `;
 
@@ -97,6 +132,10 @@ const Item = styled(motion.div)`
     font-weight: 500;
     text-align: center;
     cursor: pointer;
+  }
+
+  @media (max-width: 48em) {
+    width: 15rem;
   }
 `;
 
@@ -161,27 +200,35 @@ const Shop = () => {
   }, []);
 
   return (
-    <Section ref={ref}>
+    <Section ref={ref} id="shop">
       <Title data-scroll data-scroll-speed="-1">
         Новая коллекция
       </Title>
       <Left>
         <p>
-          Новая коллекцияНовая коллекцияНовая коллекцияНовая коллекцияНовая
-          коллекцияНовая коллекцияНовая коллекцияНовая коллекцияНовая
           <br />
           <br />
-          Новая коллекцияНовая коллекцияНовая коллекцияНовая коллекцияНовая
-          коллекцияНовая коллекцияНовая коллекцияНовая коллекцияНовая
+          Лёгкое шифоновое платье в цветочек, длина макси. Такая вещь как никто
+          другой подчеркнёт Вашу женственность и элегантность. Воланая сборка
+          вокруг плеча делает модель романтичной, cвободный крой подарит
+          комфорт.
+          <br />
+          <br />
+          Идеально подойдёт для семейного отдыха, прогулке в парке, свидания.
+          Ткань не мнётся и быстро сохнет, поэтому взяв его с собой в
+          путешествие Вы не будете переживать ни за какие неудобства.
+          <br />
+          <br />
+          <span>fEmily dress</span> - твоё платье уМИЛИтельно, дорогая!
         </p>
       </Left>
       <Right ref={horizontalRef}>
-        <Product img={img4} title="Трикотажные платья" />
-        <Product img={img5} title="Повседневные платья" />
-        <Product img={img6} title="Коктейльные платья" />
-        <Product img={img7} title="Вечерние платья" />
-        <Product img={img8} title="Джинсовые платья" />
-        <Product img={img9} title="Сарафаны" />
+        <Product img={img4} />
+        <Product img={img5} />
+        <Product img={img6} />
+        <Product img={img7} />
+        <Product img={img8} />
+        <Product img={img9} />
       </Right>
     </Section>
   );

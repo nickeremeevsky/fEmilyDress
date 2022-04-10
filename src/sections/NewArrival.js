@@ -31,6 +31,22 @@ const Overlay = styled.div`
   box-shadow: 0 0 0 4vw ${(props) => props.theme.text};
   border: 3px solid ${(props) => props.theme.body};
   z-index: 11;
+
+  @media (max-width: 70em) {
+    width: 40vw;
+    height: 80vh;
+  }
+  @media (max-width: 64em) {
+    width: 50vw;
+    box-shadow: 0 0 0 60vw ${(props) => props.theme.text};
+  }
+  @media (max-width: 48em) {
+    width: 60vw;
+  }
+  @media (max-width: 30em) {
+    width: 80vw;
+    height: 60vh;
+  }
 `;
 
 const Title = styled.h1`
@@ -43,6 +59,10 @@ const Title = styled.h1`
   top: 1rem;
   left: 0%;
   z-index: 11;
+
+  @media (max-width: 64em) {
+    font-size: ${(props) => props.theme.fontxl};
+  }
 `;
 
 const Text = styled.div`
@@ -54,6 +74,10 @@ const Text = styled.div`
   top: 0;
   right: 0;
   z-index: 11;
+
+  @media (max-width: 48em) {
+    display: none;
+  }
 `;
 
 const Container = styled.div`
@@ -68,6 +92,19 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 64em) {
+    top: 5%;
+    width: 30vw;
+  }
+  @media (max-width: 48em) {
+    top: 10%;
+    width: 40vw;
+  }
+  @media (max-width: 30em) {
+    top: 15%;
+    width: 60vw;
+  }
 `;
 
 const Item = styled.div`
@@ -143,7 +180,7 @@ const NewArrival = () => {
   }, []);
 
   return (
-    <Section ref={ref}>
+    <Section ref={ref} id="new-arrival">
       <Overlay />
       <Title
         data-scroll
@@ -158,16 +195,20 @@ const NewArrival = () => {
         <Product img={img12} title="Джемперы и кардиганы" />
         <Product img={img13} title="Аксессуары" />
       </Container>
-      <Text data-scroll data-scroll-speed="-4">
-        Как производитель христианской одежды, мы берем на себя большую
-        ответственность перед нашими покупателями. Поэтому особенное внимание
-        «fEmily dress» уделяет качеству исполнения. Над созданием длинных
-        платьев и сарафанов работает группа опытных профессионалов, влюбленных в
-        свое дело.
+      <Text data-scroll data-scroll-speed="-3">
+        Мы разработали специальную линию платьев для беременных и кормящих. С
+        наступлением осенне-зимнего сезона обязательной частью нашего
+        ассортимента становятся теплые шерстяные платья на подкладке.
         <br />
         <br />
-        Нам очень важно, чтобы женщины - христианки, среди которых много мам, в
-        том числе многодетных, могли порадовать себя новым платьем!
+        В наших магазинах Вы можете найти одежду для любого случая: лаконичное
+        офисное или роскошное вечернее платье, базовое джинсовое платье или
+        эксклюзивную модель с оригинальной декоративной отделкой.
+        <br />
+        <br />
+        Мы ценим Ваше время, Красавицы! Поэтому, если Вы попали на наш сайт, или
+        посетили один из наших магазинов, то обязательно найдете свое идеальное
+        платье!
       </Text>
     </Section>
   );
