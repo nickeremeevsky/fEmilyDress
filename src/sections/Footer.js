@@ -39,6 +39,11 @@ const LogoContainer = styled.div`
 
   @media (max-width: 48em) {
     font-size: ${(props) => props.theme.fontlg};
+
+    img {
+      width: 20vw;
+      height: auto;
+    }
   }
 `;
 
